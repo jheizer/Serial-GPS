@@ -1,0 +1,41 @@
+﻿Public Class PointFunctions
+
+    Public Shared Function ChecksumLine(ByVal Line As String) As Boolean
+        Dim Chk As Integer = 0
+
+        For Each Chr As Char In Line.ToCharArray
+            Select Case Chr
+                Case Is = "$"
+                Case Is = "*"
+                    Exit For
+
+                Case Else
+                    If Chk = 0 Then
+                        Chk = Convert.ToByte(Chr)
+                    Else
+                        Chk = Chk Xor Convert.ToByte(Chr)
+                    End If
+            End Select
+        Next
+
+        Return (Line.Substring(Line.IndexOf("*") + 1, 2) = Chk.ToString("X2"))
+
+    End Function
+
+    Public Shared Function NMEALatToDecimal(ByVal Data As String, ByVal Hemisphere As String)
+        Dim Hours As Decimal = Data.Substring(0, 2) + (Data.Substring(2) / 60)
+        If Hemisphere = "S" Then
+            Return Hours * -1
+        End If
+        Return Hours
+    End Function
+
+    Public Shared Function NMEALongToDecimal(ByVal Data As String, ByVal Hemisphere As String)
+        Dim Hours As Decimal = Data.Substring(0, 3) + (Data.Substring(3) / 60)
+        If Hemisphere = "W" Then
+            Return Hours * -1
+        End If
+        Return Hours
+    End Function
+
+End Class
