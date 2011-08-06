@@ -90,6 +90,10 @@ Public Class GPSDevice
         End Try
     End Sub
 
+    Public Function GPSConnected() As Boolean
+        Return m_SerialPort.IsOpen
+    End Function
+
     Private disposedValue As Boolean = False        ' To detect redundant calls
 
     ' IDisposable
