@@ -45,6 +45,11 @@ Public Class ScanPorts
 
         Try
             SP = New SerialPort(Port)
+
+            If SP.IsOpen Then
+                Return False
+            End If
+
             SP.BaudRate = 4800
             SP.DataBits = 8
             SP.StopBits = 1

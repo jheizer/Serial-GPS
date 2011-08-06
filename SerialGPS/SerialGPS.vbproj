@@ -65,14 +65,15 @@
     <Compile Include="GPGSA.vb" />
     <Compile Include="GPGSV.vb" />
     <Compile Include="GPRMC.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="NMEAParser.vb" />
+    <Compile Include="PGRME.vb" />
+    <Compile Include="PGRMM.vb" />
+    <Compile Include="PGRMZ.vb" />
     <Compile Include="PointFunctions.vb" />
     <Compile Include="GPSDevice.vb" />
     <Compile Include="Sat.vb" />
     <Compile Include="ScanPorts.vb" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="My Project\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

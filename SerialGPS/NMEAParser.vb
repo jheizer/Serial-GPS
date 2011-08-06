@@ -65,6 +65,10 @@ Public Class NMEAParser
         Return True
     End Function
 
+    Public Function GPSConnected() As Boolean
+        Return m_GPS.GPSConnected
+    End Function
+
     Private Sub m_FileReader_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles m_FileReader.DoWork
         While Not m_File.EndOfStream
             ParseLine(m_File.ReadLine())
